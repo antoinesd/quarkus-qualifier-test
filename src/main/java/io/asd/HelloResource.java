@@ -13,8 +13,17 @@ public class HelloResource {
     AppBean appBean;
 
     @GET
+    @Path("local")
     @Produces(MediaType.TEXT_PLAIN)
-    public String hello() {
-        return appBean.getGroup("group1").get().call();
+    public String helloLocal() {
+        return appBean.getLocalGroup("group1").get().call();
+    }
+
+
+    @GET
+    @Path("health")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String helloHealth() {
+        return appBean.getHealthGroup("group1").get().call();
     }
 }

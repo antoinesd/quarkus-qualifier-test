@@ -27,7 +27,6 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
 import javax.enterprise.util.AnnotationLiteral;
-import javax.enterprise.util.Nonbinding;
 import javax.inject.Qualifier;
 
 import static java.lang.annotation.ElementType.FIELD;
@@ -47,8 +46,8 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Retention(RUNTIME)
 @Documented
 @Qualifier
-@Repeatable(HealthGroups.class)
-public @interface HealthGroup {
+@Repeatable(LocalGroups.class)
+public @interface LocalGroup {
 
     /**
      * @return name of the custom group
@@ -56,12 +55,12 @@ public @interface HealthGroup {
     String value();
 
     /**
-     * Support inline instantiation of the {@link HealthGroup} qualifier.
+     * Support inline instantiation of the {@link LocalGroup} qualifier.
      *
      * @author Antoine Sabot-Durand
      * @since 2.2
      */
-    public static final class Literal extends AnnotationLiteral<HealthGroup> implements HealthGroup {
+    public static final class Literal extends AnnotationLiteral<LocalGroup> implements LocalGroup {
 
 
         private static final long serialVersionUID = 1L;

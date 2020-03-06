@@ -10,12 +10,21 @@ import static org.hamcrest.CoreMatchers.is;
 public class HelloResourceTest {
 
     @Test
-    public void testHelloEndpoint() {
+    public void testHelloLocalEndpoint() {
         given()
-          .when().get("/hello")
+          .when().get("/hello/local")
           .then()
              .statusCode(200)
-             .body(is("I'm in group1"));
+             .body(is("I'm local bean in group1"));
+    }
+
+    @Test
+    public void testHelloHealthEndpoint() {
+        given()
+                .when().get("/hello/health")
+                .then()
+                .statusCode(200)
+                .body(is("I'm health bean in group1"));
     }
 
 }

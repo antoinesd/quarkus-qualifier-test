@@ -33,7 +33,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 /**
  *
- * This annotation allow to repeat {@link HealthGroup} qualifier
+ * This annotation allow to repeat {@link LocalGroup} qualifier
  *
  * @author Antoine Sabot-Durand
  *
@@ -41,9 +41,9 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Target({ PARAMETER, FIELD, METHOD, TYPE })
 @Documented
 @Retention(RUNTIME)
-public @interface HealthGroups {
+public @interface LocalGroups {
     /**
-     * @return list of {@link HealthGroup}
+     * @return list of {@link LocalGroup}
      */
-    HealthGroup[] value();
+    LocalGroup[] value();
 }
